@@ -1,0 +1,4 @@
+[build]
+base    = "modern-day-researcher"
+publish = "modern-day-researcher/build"
+command = "yarn build" 
