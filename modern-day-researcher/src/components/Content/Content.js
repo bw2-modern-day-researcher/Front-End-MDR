@@ -1,73 +1,74 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import axios from "axios";
 
-import TabList from './TabList';
-import CardList from './CardList';
-
+import TabList from "./TabList";
+import CardList from "./CardList";
+import { tabData, cardData } from "../../data";
 
 export default class Content extends Component {
   constructor() {
     super();
     this.state = {
-      selected: 'all',
+      selected: "all",
       tabs: [],
       cards: []
     };
   }
-  authenticate = () => {
-    const token = localStorage.getItem('jwt');
+
+  getPost = () => {
+    const token = localStorage.getItem("jwt");
     const options = {
       headers: {
         Authorization: token
       }
-    }
-  }
+    };
 
-    // if (token) {
-    //   axios.get('http://localhost:3000/api/content', options)
-    //     .then(res => {
-    //       if (res.status === 200 && res.data) {
-    //         this.setState({ loggedIn: true, content: res.data })
-    //       } else {
-    //         throw new Error();
-    //       }
-    //     })
-    //     .catch(err => {
-    //       this.props.history.push('/login')
-    //     })
-    // } else {
-    //   this.props.history.push('/login')
-    // }
-  
+    if (token) {
+      axios
+        .get(
+          "https://modern-day-researcher-backend.herokuapp.com/api/post",
+          options
+        )
+        .then(res => {
+          if (res.status === 200 && res.data) {
+            console.log(res.data);
+            this.setState({ loggedIn: true, tabs: tabData, cards: cardData });
+          } else {
+            throw new Error();
+          }
+        })
+        .catch(err => {
+          this.props.history.push("/login");
+        });
+    }
+  };
 
   componentDidMount() {
-    this.authenticate()
+    this.getPost();
   }
 
   componentDidUpdate(prevProps) {
     const { pathname } = this.props.location;
-    if (pathname === '/' && pathname !== prevProps.location.pathname) {
-      this.authenticate();
+    if (pathname === "/" && pathname !== prevProps.location.pathname) {
+      this.getPost();
     }
   }
 
   logout = () => {
-    localStorage.removeItem('jwt')
-    this.props.history.push('/Login')
-  }
-
+    localStorage.removeItem("jwt");
+    this.props.history.push("/Login");
+  };
 
   changeSelected = tab => {
-    this.setState({selected: tab });
+    this.setState({ selected: tab });
   };
 
   filterCards = () => {
-   if (this.state.selected === 'all') {
-     return this.state.cards;
-   } else {
-     return this.state.cards.filter(card => card.tab === this.state.selected);
-   }
-  
+    if (this.state.selected === "all") {
+      return this.state.cards;
+    } else {
+      return this.state.cards.filter(card => card.tab === this.state.selected);
+    }
   };
 
   // addNewArticle = link => {
@@ -77,12 +78,16 @@ export default class Content extends Component {
   //     .catch(err => console.log(err));
   // };
 
-  render(){
+  render() {
     return (
       <div className="content-container">
-      <TabList tabs={this.state.tabs} selectedTab={this.state.selected} selectTabHandler={this.changeSelected}/> 
-      <CardList cards={this.filterCards()}/>
+        <TabList
+          tabs={this.state.tabs}
+          selectedTab={this.state.selected}
+          selectTabHandler={this.changeSelected}
+        />
+        <CardList cards={this.filterCards()} />
       </div>
-    )
+    );
   }
 }
