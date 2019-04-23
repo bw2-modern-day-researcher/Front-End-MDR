@@ -23,7 +23,7 @@ class Login extends Component {
 
   submitHandler = event => {
     event.preventDefault();
-    axios.post(`http://localhost:3300/api/login`, this.state.user)
+    axios.post(`https://modern-day-researcher-backend.herokuapp.com/api/login`, this.state.user)
       .then(res => {
         if (res.status === 200 && res.data) {
           localStorage.setItem('jwt', res.data.token)

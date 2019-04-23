@@ -6,7 +6,8 @@ class CardForm extends Component {
     this.state = {
       title: '',
       category: '',
-      link: ''
+      link: '',
+      imgURL: ''
     };
   }
 
@@ -17,7 +18,8 @@ class CardForm extends Component {
     this.setState({
       title: '',
       category: '',
-      link: ''
+      link: '',
+      imgURL: ''
     });
   }
 

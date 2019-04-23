@@ -3,7 +3,7 @@ import axios from "axios";
 
 import TabList from "./TabList";
 import CardList from "./CardList";
-import { tabData, cardData } from "../../data";
+import { tabData } from "../../data";
 
 export default class Content extends Component {
   constructor() {
@@ -12,6 +12,7 @@ export default class Content extends Component {
       selected: "all",
       tabs: [],
       cards: []
+    
     };
   }
 
@@ -32,7 +33,7 @@ export default class Content extends Component {
         .then(res => {
           if (res.status === 200 && res.data) {
             console.log(res.data);
-            this.setState({ loggedIn: true, tabs: tabData, cards: cardData });
+            this.setState({ loggedIn: true, tabs: tabData, cards: res.data });
           } else {
             throw new Error();
           }
