@@ -3,6 +3,7 @@ import axios from "axios";
 
 import TabList from "./TabList";
 import CardList from "./CardList";
+import CardForm from "./CardForm";
 import { tabData } from "../../data";
 
 export default class Content extends Component {
@@ -11,8 +12,9 @@ export default class Content extends Component {
     this.state = {
       selected: "all",
       tabs: [],
-      cards: []
-    
+      cards: [],
+      newPost: [],
+      username: ""
     };
   }
 
@@ -33,6 +35,7 @@ export default class Content extends Component {
         .then(res => {
           if (res.status === 200 && res.data) {
             console.log(res.data);
+            console.log(res.data.category)
             this.setState({ loggedIn: true, tabs: tabData, cards: res.data });
           } else {
             throw new Error();
@@ -53,6 +56,12 @@ export default class Content extends Component {
     if (pathname === "/" && pathname !== prevProps.location.pathname) {
       this.getPost();
     }
+    if (this.state.newPost.length > 0) {
+      this.getPost();
+      this.setState({
+        newPost: []
+      });
+    }
   }
 
   logout = () => {
@@ -72,12 +81,25 @@ export default class Content extends Component {
     }
   };
 
-  // addNewArticle = link => {
-  //   axios
-  //     .post("http://localhost:3333/", this.state)
-  //     .then(res => this.setState({ links: res.data }))
-  //     .catch(err => console.log(err));
-  // };
+  addNewArticle = info => {
+    const token = localStorage.getItem("jwt");
+    const options = {
+      headers: {
+        Authorization: token
+      }
+    };
+
+    if (token) {
+      axios
+        .post(
+          "https://modern-day-researcher-backend.herokuapp.com/api/post/create",
+          info,
+          options
+        )
+        .then(res => this.setState({ newPost: res.data }))
+        .catch(err => console.log(err));
+    }
+  };
 
   render() {
     return (
@@ -88,6 +110,7 @@ export default class Content extends Component {
           selectTabHandler={this.changeSelected}
         />
         <CardList cards={this.filterCards()} />
+        <CardForm addNewArticle={this.addNewArticle} />
       </div>
     );
   }

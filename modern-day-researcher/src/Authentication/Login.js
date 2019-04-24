@@ -27,6 +27,7 @@ class Login extends Component {
       .then(res => {
         if (res.status === 200 && res.data) {
           localStorage.setItem('jwt', res.data.token)
+          localStorage.setItem('username', res.data.username)
           this.props.history.push('/content')
         } else {
           throw new Error();
