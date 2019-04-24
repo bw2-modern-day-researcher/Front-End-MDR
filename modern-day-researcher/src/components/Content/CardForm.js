@@ -5,7 +5,7 @@ class CardForm extends Component {
     super(props);
     this.state = {
       title: "",
-      category: [],
+      category: "news",
       link: "",
       imgURL: "",
       username: localStorage.getItem("username"),
@@ -20,7 +20,7 @@ class CardForm extends Component {
     this.setState({
       ...this.state,
       title: "",
-      category: [],
+      category: "news",
       link: "",
       imgURL: "",
       username: localStorage.getItem("username"),
@@ -70,8 +70,8 @@ class CardForm extends Component {
               <input
                 onChange={this.handleInputChange}
                 type="radio"
-                name="share"
-                value="1"
+                name="public"
+                value={true}
                 defaultChecked={true}
                 className="form-check-input"
               />
@@ -82,8 +82,8 @@ class CardForm extends Component {
               <input
                 onChange={this.handleInputChange}
                 type="radio"
-                name="share"
-                value="0"
+                name="public"
+                value={false}
                 className="form-check-input"
               />
               Private
