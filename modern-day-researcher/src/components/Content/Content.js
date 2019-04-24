@@ -5,6 +5,7 @@ import TabList from "./TabList";
 import CardList from "./CardList";
 import CardForm from "./CardForm";
 import { tabData } from "../../data";
+// import { tabData } from "../../data";
 
 export default class Content extends Component {
   constructor() {
@@ -35,7 +36,7 @@ export default class Content extends Component {
         .then(res => {
           if (res.status === 200 && res.data) {
             console.log(res.data);
-            console.log(res.data.category)
+            console.log(res.data[0].category)
             this.setState({ loggedIn: true, tabs: tabData, cards: res.data });
           } else {
             throw new Error();
@@ -77,7 +78,7 @@ export default class Content extends Component {
     if (this.state.selected === "all") {
       return this.state.cards;
     } else {
-      return this.state.cards.filter(card => card.tab === this.state.selected);
+      return this.state.cards.filter(card => card.category === this.state.selected);
     }
   };
 
