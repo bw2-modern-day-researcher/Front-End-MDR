@@ -116,3 +116,12 @@ h2 {
 .form-check {
   margin: 15px 0;
 }
+
+.card p {
+  font-size: 12px;
+}
+
+.card.completed {
+  background-color: #D2D8B3;
+  text-decoration: line-through;
+}

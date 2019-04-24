@@ -16,7 +16,7 @@ class App extends Component {
           &nbsp;|&nbsp;
           <NavLink to='/register' style={{ textDecoration: 'none' }}>Register</NavLink>
           <NavLink to='/content' style={{ textDecoration: 'none' }}>
-          <h1>Modern Day Researcher</h1>
+          <h1>Research Pal</h1>
           </NavLink>
           <br />          
         </nav>

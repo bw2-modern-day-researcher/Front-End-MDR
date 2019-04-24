@@ -81,6 +81,20 @@ export default class Content extends Component {
     }
   };
 
+  toggleCard = id => {
+    this.setState({
+      cards: this.state.cards.map(card => {
+        if (card.id === id) {
+          return {
+            ...card,
+            completed: !card.completed
+          };
+        }
+        return card;
+      })
+    });
+  };
+
   addNewArticle = info => {
     const token = localStorage.getItem("jwt");
     const options = {
@@ -109,7 +123,7 @@ export default class Content extends Component {
           selectedTab={this.state.selected}
           selectTabHandler={this.changeSelected}
         />
-        <CardList cards={this.filterCards()} />
+        <CardList cards={this.filterCards()} toggleCard={this.toggleCard}/>
         <CardForm addNewArticle={this.addNewArticle} />
       </div>
     );

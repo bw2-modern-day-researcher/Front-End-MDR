@@ -3,7 +3,7 @@ import Tab from './Tab';
 
 
 const TabList = props => {
-  console.log("poop", props)
+  console.log("props", props)
   return (
     <div className="tabs">
       <div className="topics">
