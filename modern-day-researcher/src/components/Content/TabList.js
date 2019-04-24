@@ -7,7 +7,7 @@ const TabList = props => {
   return (
     <div className="tabs">
       <div className="topics">
-            {props.tabs.map(tab => <Tab tab={tab} selectTabHandler={props.selectTabHandler} selectedTab={props.selectedTab} />)}
+            {props.tabs.map(tab => <Tab tab={tab} key={tab} selectTabHandler={props.selectTabHandler} selectedTab={props.selectedTab} />)}
       </div>
     </div>
   );

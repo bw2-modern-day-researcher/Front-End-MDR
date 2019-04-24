@@ -2,3 +2,8 @@
 base    = "modern-day-researcher"
 publish = "modern-day-researcher/build"
 command = "yarn build" 
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200

@@ -71,6 +71,7 @@ class Login extends Component {
             name="email"
             value={this.state.user.email}
             onChange={this.inputHandler}
+            placeholder="(optional)"
           />
           <button type="submit">Submit</button>
         </form>

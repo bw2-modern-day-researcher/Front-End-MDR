@@ -68,10 +68,11 @@ class CardForm extends Component {
           <div className="form-check">
             <label>
               <input
+                onChange={this.handleInputChange}
                 type="radio"
                 name="share"
                 value="1"
-                checked={true}
+                defaultChecked={true}
                 className="form-check-input"
               />
               Public
@@ -79,6 +80,7 @@ class CardForm extends Component {
 
             <label>
               <input
+                onChange={this.handleInputChange}
                 type="radio"
                 name="share"
                 value="0"
