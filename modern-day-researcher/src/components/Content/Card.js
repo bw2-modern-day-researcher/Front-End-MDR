@@ -11,7 +11,7 @@ const Card = props => {
       <a href={`${props.card.link}`}>Read Article</a>
       <button
         type="submit"
-        className={`mark${props.card.completed ? " completed" : ""}`}
+        className={`mark${props.card.seen ? " seen" : ""}`}
         onClick={() => props.toggleCard(props.card)}
       >
         Mark as Read

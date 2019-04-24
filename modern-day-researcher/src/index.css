@@ -121,7 +121,7 @@ h2 {
   font-size: 12px;
 }
 
-.mark.completed {
+.mark.seen {
   background-color: #D2D8B3;
   text-decoration: line-through;
 }
