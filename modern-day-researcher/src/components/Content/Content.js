@@ -98,8 +98,8 @@ export default class Content extends Component {
       axios
         .put(
           `https://modern-day-researcher-backend.herokuapp.com/api/post/update/${id}`,
-          options,
-          changes
+          changes,
+          options
         )
         .then(res =>
           this.setState({
@@ -116,18 +116,6 @@ export default class Content extends Component {
         )
         .catch(err => console.log(err));
     }
-
-    // this.setState({
-    //   cards: this.state.cards.map(card => {
-    //     if (card.id === id) {
-    //       return {
-    //         ...card,
-    //         completed: !card.completed
-    //       };
-    //     }
-    //     return card;
-    //   })
-    // })
   };
 
   addNewArticle = info => {
