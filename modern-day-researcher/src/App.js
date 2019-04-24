@@ -5,6 +5,7 @@ import { Redirect } from 'react-router';
 import Register from './Authentication/Register'
 import Content from './components/Content/Content'
 import Login from "./Authentication/Login";
+import Profile from './Authentication/Profile';
 
 
 class App extends Component {
@@ -15,6 +16,8 @@ class App extends Component {
           <NavLink to='/login' style={{ textDecoration: 'none' }}>Log in</NavLink>
           &nbsp;|&nbsp;
           <NavLink to='/register' style={{ textDecoration: 'none' }}>Register</NavLink>
+          &nbsp;|&nbsp;
+          <NavLink to='/profile' style={{ textDecoration: 'none' }}>My Profile</NavLink>
           <NavLink to='/content' style={{ textDecoration: 'none' }}>
           <h1>Research Pal</h1>
           </NavLink>
@@ -23,10 +26,11 @@ class App extends Component {
 
         <section>
           <Switch>
+          <Route path='/login' component={Login} />
             <Route path='/register' component={Register} />
-            <Route path='/login' component={Login} />
+            <Route path='/profile' component={Profile} />
             <Route path='/content' component={Content} />
-            <Route path='/' render={() => (
+            <Route exact path='/' render={() => (
               <Redirect to='/content' />
             )
             } />

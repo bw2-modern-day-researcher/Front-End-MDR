@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-import TabList from "./TabList";
-import CardList from "./CardList";
-import CardForm from "./CardForm";
-import { tabData } from "../../data";
+import TabList from "../components/Content/TabList";
+import CardList from "../components/Content/CardList";
+import CardForm from "../components/Content/CardForm";
+import { tabData } from "../data";
 
-export default class Content extends Component {
+export default class Profile extends Component {
   constructor() {
     super();
     this.state = {
@@ -18,8 +18,9 @@ export default class Content extends Component {
     };
   }
 
-  getPost = () => {
+  getProfile = () => {
     const token = localStorage.getItem("jwt");
+    const profile = localStorage.getItem("username");
     const options = {
       headers: {
         Authorization: token
@@ -29,27 +30,28 @@ export default class Content extends Component {
     if (token) {
       axios
         .get(
-          "https://modern-day-researcher-backend.herokuapp.com/api/post",
+          `https://modern-day-researcher-backend.herokuapp.com/api/post/${profile}`,
           options
+        
         )
         .then(res => {
-          if (res.status === 200 && res.data) {
-            console.log(res.data);
+          if (res.status === 201 && res.data) {
+            console.log("Help!", res.data);
             this.setState({ loggedIn: true, tabs: tabData, cards: res.data });
           } else {
             throw new Error();
           }
         })
         .catch(err => {
-          this.props.history.push("/login");
+           this.props.history.push("/login");
         });
     }
   };
 
   componentDidMount() {
-    this.getPost();
+    this.getProfile();
   }
-
+ 
   componentDidUpdate(prevProps) {
     const { pathname } = this.props.location;
     if (pathname === "/" && pathname !== prevProps.location.pathname) {
