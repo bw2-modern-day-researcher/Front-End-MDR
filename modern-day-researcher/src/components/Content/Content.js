@@ -77,22 +77,57 @@ export default class Content extends Component {
     if (this.state.selected === "all") {
       return this.state.cards;
     } else {
-      return this.state.cards.filter(card => card.category === this.state.selected);
+      return this.state.cards.filter(
+        card => card.category === this.state.selected
+      );
     }
   };
 
-  toggleCard = id => {
-    this.setState({
-      cards: this.state.cards.map(card => {
-        if (card.id === id) {
-          return {
-            ...card,
-            completed: !card.completed
-          };
-        }
-        return card;
-      })
-    });
+  toggleCard = info => {
+    const token = localStorage.getItem("jwt");
+    const changes = { title: info.title, category: info.category, link: info.link, seen: true, public: info.public };
+    const id = info.id;
+    console.log(info)
+    const options = {
+      headers: {
+        Authorization: token
+      }
+    };
+
+    if (token) {
+      axios
+        .put(
+          `https://modern-day-researcher-backend.herokuapp.com/api/post/update/${id}`,
+          options,
+          changes
+        )
+        .then(res =>
+          this.setState({
+            cards: this.state.cards.map(card => {
+              if (card.id === id) {
+                return {
+                  ...card,
+                  completed: !card.completed
+                };
+              }
+              return card;
+            })
+          })
+        )
+        .catch(err => console.log(err));
+    }
+
+    // this.setState({
+    //   cards: this.state.cards.map(card => {
+    //     if (card.id === id) {
+    //       return {
+    //         ...card,
+    //         completed: !card.completed
+    //       };
+    //     }
+    //     return card;
+    //   })
+    // })
   };
 
   addNewArticle = info => {
@@ -123,7 +158,7 @@ export default class Content extends Component {
           selectedTab={this.state.selected}
           selectTabHandler={this.changeSelected}
         />
-        <CardList cards={this.filterCards()} toggleCard={this.toggleCard}/>
+        <CardList cards={this.filterCards()} toggleCard={this.toggleCard} />
         <CardForm addNewArticle={this.addNewArticle} />
       </div>
     );

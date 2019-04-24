@@ -121,7 +121,8 @@ h2 {
   font-size: 12px;
 }
 
-.card.completed {
+.mark.completed {
   background-color: #D2D8B3;
   text-decoration: line-through;
 }
+
