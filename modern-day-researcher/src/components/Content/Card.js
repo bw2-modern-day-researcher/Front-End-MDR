@@ -9,7 +9,7 @@ const Card = props => {
         </div>
         <h3>{props.card.title}</h3>
         <p>{props.card.category}</p>
-        <p>{props.card.link}</p>
+        <a href={`${props.card.link}`}>Go to Article</a>
     </div>
   );
 };

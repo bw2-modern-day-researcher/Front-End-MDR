@@ -102,3 +102,17 @@ h2 {
   margin: 5px 0;
   padding: 5px;
 }
+
+.category-select {
+  display: flex;
+  margin: 10px 0;
+}
+
+.category-label {
+  color: white;
+  padding-right: 15px;
+}
+
+.form-check {
+  margin: 15px 0;
+}
