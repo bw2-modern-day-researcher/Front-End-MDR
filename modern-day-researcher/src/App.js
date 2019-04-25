@@ -13,23 +13,40 @@ class App extends Component {
     return (
       <div className="App">
         <nav className="top-nav">
-        <NavLink to="/login" onClick={() => localStorage.removeItem("jwt")}>Log Out</NavLink>
-          <NavLink to="/login">Log in</NavLink>
-          &nbsp;|&nbsp;
-          <NavLink to="/register">Register</NavLink>
-          &nbsp;|&nbsp;
-          <NavLink to="/profile">My Profile</NavLink>
+          <div className="reg-login">
+          <NavLink className="top-nav-tab sign-in reg" to="/register">
+            Register
+          </NavLink>
+            <NavLink className="top-nav-tab sign-in" to="/login">
+              Log in
+            </NavLink>
+          </div>
+          <div className="logo">
           <NavLink to="/content">
             <img src={logo} alt={logo} />
           </NavLink>
-          <br />
+        </div>
+          <NavLink className="top-nav-tab main" to="/content">
+            Home
+          </NavLink>
+          <NavLink className="top-nav-tab main" to="/profile">
+            My Profile
+          </NavLink>
+          <NavLink
+              className="top-nav-tab main"
+              to="/login"
+              onClick={() => localStorage.removeItem("jwt")}
+            >
+              Log Out
+            </NavLink>
         </nav>
+        
 
         <section>
           <Switch>
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
-            <Route path="/profile" render={props => <Profile {...props}/>}/>
+            <Route path="/profile" render={props => <Profile {...props} />} />
             <Route path="/content" component={Content} />
             <Route exact path="/" render={() => <Redirect to="/content" />} />
           </Switch>

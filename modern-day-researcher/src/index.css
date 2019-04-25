@@ -1,7 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: whitesmoke;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -13,6 +12,36 @@ h1 {
   color: #602040;
   font-size: 45px;
   font-family: 'Special Elite', cursive;
+}
+
+.reg-login {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #272727;
+    color:black;
+    padding: 3px 15px;
+}
+
+.sign-in {
+  color:black;
+  padding: 3px 15px;
+  background-color: #fff;
+}
+
+.sign-in.reg {
+  color: white;
+  background-color: #602040;
+}
+
+.top-nav-tab {
+  margin: 10px 8px;
+  text-decoration: none;
+}
+
+.top-nav-tab.main {
+ color: black;
+ padding: 3px 15px;
+ border: 2px solid #272727;
 }
 
 .tabs .topics {
@@ -33,7 +62,7 @@ h1 {
   flex-direction: row;
   color: #fff;
   background-color: #602040;
-  margin: 0 5px 20px 5px;
+  margin: 15px 5px 20px 5px;
   padding: 5px 30px;
   font-size: 12px;
   letter-spacing: 2px;
@@ -124,5 +153,9 @@ h2 {
 .mark.seen {
   background-color: #D2D8B3;
   text-decoration: line-through;
+}
+
+.logo {
+  margin: 30px 0;
 }
 
