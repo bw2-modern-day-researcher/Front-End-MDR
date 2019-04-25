@@ -86,7 +86,7 @@ export default class Profile extends Component {
 
   toggleCard = info => {
     const token = localStorage.getItem("jwt");
-    const changes = { title: info.title, category: info.category, link: info.link, seen: true, public: info.public };
+    const changes = { title: info.title, category: info.category, link: info.link, seen: !info.seen, public: info.public };
     const id = info.id;
     console.log(info)
     const options = {
@@ -108,7 +108,7 @@ export default class Profile extends Component {
               if (card.id === id) {
                 return {
                   ...card,
-                  completed: !card.completed
+                  seen: !card.seen
                 };
               }
               return card;
