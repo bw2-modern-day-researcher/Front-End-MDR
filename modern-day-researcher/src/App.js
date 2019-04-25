@@ -13,6 +13,7 @@ class App extends Component {
     return (
       <div className="App">
         <nav className="top-nav">
+        <NavLink to="/login" onClick={() => localStorage.removeItem("jwt")}>Log Out</NavLink>
           <NavLink to="/login">Log in</NavLink>
           &nbsp;|&nbsp;
           <NavLink to="/register">Register</NavLink>
