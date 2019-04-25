@@ -140,6 +140,7 @@ export default class Profile extends Component {
   };
 
   render() {
+    if(!localStorage.getItem('jwt')) {this.props.history.push('/login')}
     return (
       <div className="content-container">
         <TabList
