@@ -10,7 +10,7 @@ body {
 }
 
 h1 {
-  color: #384D48;
+  color: #602040;
   font-size: 45px;
   font-family: 'Special Elite', cursive;
 }
@@ -32,7 +32,7 @@ h1 {
   align-items: center;
   flex-direction: row;
   color: #fff;
-  background-color: #384D48;
+  background-color: #602040;
   margin: 0 5px 20px 5px;
   padding: 5px 30px;
   font-size: 12px;
@@ -45,8 +45,8 @@ h1 {
 }
 .tabs .topics .active-tab {
   background-color: #fff;
-  color: #384D48;
-  border: 2px solid #384D48;
+  color: #602040;
+  border: 2px solid #602040;
 }
 .cards-container {
   display: flex;
@@ -77,7 +77,7 @@ h1 {
 }
 
 .input-form {
-  background-color:#384D48;
+  background-color:#602040;
   width: 50%;
   margin: 0 auto;
   border: 1px solid lightgrey;
