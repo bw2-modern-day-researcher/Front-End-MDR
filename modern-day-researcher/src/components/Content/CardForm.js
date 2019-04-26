@@ -57,9 +57,9 @@ class CardForm extends Component {
               <label className="category-label">Category:</label>
               <select name="category" onChange={this.handleInputChange}>
                 <option value="news">News</option>
-                <option value="health">Health</option>
-                <option value="tech">Tech</option>
-                <option value="finance">Finance</option>
+                <option value="animals">Animals</option>
+                <option value="technology">Technology</option>
+                <option value="business">Business</option>
                 <option value="art">Art</option>
                 <option value="misc">Misc</option>
               </select>
