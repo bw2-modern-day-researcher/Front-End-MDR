@@ -11,19 +11,19 @@ body {
 h1 {
   color: #602040;
   font-size: 45px;
-  font-family: 'Special Elite', cursive;
+  font-family: "Special Elite", cursive;
 }
 
 .reg-login {
-    display: flex;
-    justify-content: flex-end;
-    background-color: #272727;
-    color:black;
-    padding: 3px 15px;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #272727;
+  color: black;
+  padding: 3px 15px;
 }
 
 .sign-in {
-  color:black;
+  color: black;
   padding: 3px 15px;
   background-color: #fff;
 }
@@ -39,9 +39,15 @@ h1 {
 }
 
 .top-nav-tab.main {
- color: black;
- padding: 3px 15px;
- border: 2px solid #272727;
+  color: black;
+  padding: 3px 15px;
+  border: 2px solid #272727;
+}
+
+@media (max-width: 600px) {
+  .top-nav {
+    margin-bottom: 30px;
+  }
 }
 
 .tabs .topics {
@@ -50,11 +56,19 @@ h1 {
   align-items: center;
   flex-direction: row;
 }
+
+@media (max-width: 800px) {
+  .tabs .topics {
+    flex-wrap: wrap;
+  }
+}
+
 .tabs .topics .title {
   font-size: 12px;
   letter-spacing: 1px;
   font-weight: bold;
 }
+
 .tabs .topics .tab {
   display: flex;
   justify-content: none;
@@ -69,6 +83,13 @@ h1 {
   cursor: pointer;
   font-weight: bold;
 }
+
+@media (max-width: 600px) {
+  .tabs .topics .tab {
+    margin: 5px 5px 5px 5px;
+  }
+}
+
 .tabs .topics .tab:hover {
   text-decoration: underline;
 }
@@ -84,6 +105,7 @@ h1 {
   width: 80%;
   margin: auto;
 }
+
 .cards-container {
   display: flex;
   justify-content: space-evenly;
@@ -93,13 +115,22 @@ h1 {
   margin: 30px auto;
   flex-wrap: wrap;
 }
+
+@media (max-width: 600px) {
+  .cards-container {
+    flex-direction: column;
+    flex-wrap: none;
+  }
+}
+
 @media (min-width: 1200px) {
   .cards-container {
     width: 1200px;
   }
 }
+
 .cards-container .card {
-  border: 1px solid lightgrey;
+  border: 1px solid lightgray;
   border-radius: 3px;
   display: flex;
   justify-content: space-between;
@@ -113,14 +144,35 @@ h1 {
   padding: 24px;
 }
 
+@media (max-width: 800px) {
+  .cards-container .card {
+    width: 30%;
+    margin: 10px auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .cards-container .card {
+    width: 60%;
+    margin: 10px auto;
+  }
+}
+
 .input-form {
-  background-color:#602040;
+  background-color: #602040;
   width: 50%;
   margin: 0 auto;
   border: 1px solid lightgrey;
   border-radius: 3px;
   padding: 30px 0;
   margin-bottom: 50px;
+}
+
+@media (max-width: 800px) {
+  .input-form {
+    width: 100%;
+    margin: 10px auto;
+  }
 }
 
 h2 {
@@ -180,12 +232,17 @@ h2 {
 
 .card.seen {
   background-color: #272727;
-  opacity: 50%;
 }
-
 
 .logo {
   margin: 30px 0;
+}
+
+
+@media (max-width: 800px) {
+  img {
+    width: 70%;
+  }
 }
 
 .save-article-btn {
