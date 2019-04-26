@@ -10,7 +10,7 @@ class CardForm extends Component {
       imgURL: "",
       username: localStorage.getItem("username"),
       seen: false,
-      public: 1
+      public: true
     };
   }
 
@@ -25,7 +25,7 @@ class CardForm extends Component {
       imgURL: "",
       username: localStorage.getItem("username"),
       seen: false,
-      public: 1
+      public: true
     });
   };
 
