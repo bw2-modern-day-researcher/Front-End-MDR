@@ -264,6 +264,12 @@ h2 {
   border-radius: 5px;
 }
 
+@media (max-width: 800px) {
+  .login {
+    width: 70%;
+  }
+}
+
 .login h1 {
   font-size: 30px;
 }
