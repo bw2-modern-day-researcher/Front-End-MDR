@@ -46,12 +46,12 @@ class Register extends Component {
 
   render() {
     return (
-      <div className='register'>
+      <div className='login'>
         <form onSubmit={this.submitHandler}>
           <section>
-            <h1>Registration Page</h1>
+            <h1>Welcome!<br/> Please register:</h1>
           </section>
-          <label htmlFor='username'>Username:</label>
+          <label htmlFor='username'>Username</label>
           <input
             type='text'
             id='username'
@@ -59,7 +59,7 @@ class Register extends Component {
             value={this.state.user.username}
             onChange={this.inputHandler}
           />
-          <label htmlFor='password'>Password:</label>
+          <label htmlFor='password'>Password</label>
           <input
             type='text'
             id='password'
@@ -76,7 +76,7 @@ class Register extends Component {
             onChange={this.inputHandler}
             placeholder="(optional)"
           />
-          <button type='submit'>Submit</button>
+          <button className="login-btn" type='submit'>Submit</button>
         </form>
         {this.state.message
           ? (<h4>{this.state.message}</h4>)

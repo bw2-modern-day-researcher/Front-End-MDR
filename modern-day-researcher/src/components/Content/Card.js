@@ -5,7 +5,7 @@ const Card = props => {
     <div className={`card${props.card.seen ? " seen" : ""}`}>
       <h3>{props.card.title}</h3>
       <p>{props.card.category.toUpperCase()}</p>
-      <a href={`${props.card.link}`}>Read Article</a>
+      <a href={`${props.card.link}`}>READ NOW</a>
       <button
         type="submit"
         onClick={() => props.toggleCard(props.card)}

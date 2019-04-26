@@ -69,7 +69,7 @@ class CardForm extends Component {
             <label>
               <input
                 onChange={this.handleInputChange}
-                type="radio"
+                type="checkbox"
                 name="public"
                 value={true}
                 defaultChecked={true}
@@ -81,7 +81,7 @@ class CardForm extends Component {
             <label>
               <input
                 onChange={this.handleInputChange}
-                type="radio"
+                type="checkbox"
                 name="public"
                 value={false}
                 className="form-check-input"
@@ -90,7 +90,7 @@ class CardForm extends Component {
             </label>
           </div>
 
-          <button className="save-article-btn"type="submit">Save Article</button>
+          <button className="save-article-btn"type="submit">Save</button>
         </form>
       </div>
     );

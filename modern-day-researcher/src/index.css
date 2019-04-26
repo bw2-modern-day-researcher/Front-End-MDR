@@ -8,12 +8,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1 {
-  color: #602040;
-  font-size: 45px;
-  font-family: "Special Elite", cursive;
-}
-
 .reg-login {
   display: flex;
   justify-content: flex-end;
@@ -238,7 +232,6 @@ h2 {
   margin: 30px 0;
 }
 
-
 @media (max-width: 800px) {
   img {
     width: 70%;
@@ -253,6 +246,47 @@ h2 {
   padding: 5px 0;
   border-radius: 20px;
   margin: 10px 0;
+  border: 0;
+  width: 200px;
+  color: #272727;
+}
+
+.form-check label {
+  color: white;
+  margin-right: 7px;
+}
+
+.login {
+  color: white;
+  background-color: #602040;
+  width: 30%;
+  margin: 60px auto;
+  border-radius: 5px;
+}
+
+.login h1 {
+  font-size: 30px;
+}
+
+.login form {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 40px;
+}
+
+.login form input {
+  width: 50%;
+  padding: 5px;
+  margin: 10px auto;
+}
+
+.login-btn {
+  color: #272727;
+  font-weight: bold;
+  background-color: mediumaquamarine;
+  padding: 7px 0;
+  border-radius: 20px;
+  margin: 10px auto;
   border: 0;
   width: 200px;
 }

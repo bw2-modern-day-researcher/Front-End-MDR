@@ -46,7 +46,7 @@ class Login extends Component {
       <div className='login'>
         <form onSubmit={this.submitHandler}>
           <section>
-            <h1>Login Page</h1>
+            <h1>Login</h1>
           </section>
           <label htmlFor="username">Username</label>
           <input
@@ -73,7 +73,7 @@ class Login extends Component {
             onChange={this.inputHandler}
             placeholder="(optional)"
           />
-          <button type="submit">Submit</button>
+          <button className="login-btn" type="submit">Submit</button>
         </form>
         {this.state.message
           ? (<h4>{this.state.message}</h4>)

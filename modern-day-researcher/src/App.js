@@ -18,7 +18,7 @@ class App extends Component {
             Register
           </NavLink>
             <NavLink className="top-nav-tab sign-in" to="/login">
-              Log in
+              Login
             </NavLink>
           </div>
           <div className="logo">
