@@ -54,9 +54,6 @@ class App extends Component {
       </div>
     );
   }
-  Logout = () => {
-    localStorage.removeItem("jwt");
-  };
 }
 
 export default withRouter(App);

@@ -1,2 +1,2 @@
-export const tabData = ['all', 'news', 'health', 'tech', 'finance', 'art', 'misc'];
+export const tabData = ['all', 'news', 'animals', 'technology', 'business', 'art', 'misc'];
 

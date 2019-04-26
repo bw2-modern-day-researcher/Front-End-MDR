@@ -90,7 +90,7 @@ class CardForm extends Component {
             </label>
           </div>
 
-          <button type="submit">Save Article</button>
+          <button className="save-article-btn"type="submit">Save Article</button>
         </form>
       </div>
     );

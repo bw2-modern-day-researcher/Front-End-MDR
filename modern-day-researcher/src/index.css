@@ -77,13 +77,20 @@ h1 {
   color: #602040;
   border: 2px solid #602040;
 }
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+}
 .cards-container {
   display: flex;
   justify-content: space-evenly;
   align-items: none;
   flex-direction: row;
   width: 100%;
-  margin: 30px 0;
+  margin: 30px auto;
   flex-wrap: wrap;
 }
 @media (min-width: 1200px) {
@@ -101,6 +108,7 @@ h1 {
   background-color: white;
   box-shadow: 0 5px 10px lightgray;
   width: 20%;
+  height: auto;
   margin-bottom: 16px;
   padding: 24px;
 }
@@ -146,16 +154,48 @@ h2 {
   margin: 15px 0;
 }
 
+.card h3 {
+  height: 100px;
+}
+
 .card p {
   font-size: 12px;
 }
-
-.mark.seen {
-  background-color: #D2D8B3;
-  text-decoration: line-through;
+.card a {
+  text-decoration: none;
+  color: white;
+  background-color: mediumaquamarine;
+  padding: 5px 0;
+  border-radius: 20px;
+  margin: 10px 0;
 }
+
+.card button {
+  text-decoration: none;
+  background-color: lightgray;
+  width: 75px;
+  border: 0;
+  margin: auto;
+}
+
+.card.seen {
+  background-color: #272727;
+  opacity: 50%;
+}
+
 
 .logo {
   margin: 30px 0;
 }
 
+.save-article-btn {
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: mediumaquamarine;
+  padding: 5px 0;
+  border-radius: 20px;
+  margin: 10px 0;
+  border: 0;
+  width: 200px;
+}
