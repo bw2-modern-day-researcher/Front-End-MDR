@@ -9,8 +9,8 @@ class CardForm extends Component {
       link: "",
       imgURL: "",
       username: localStorage.getItem("username"),
-      seen: false,
-      public: true
+      seen: false
+     
     };
   }
 
@@ -24,8 +24,8 @@ class CardForm extends Component {
       link: "",
       imgURL: "",
       username: localStorage.getItem("username"),
-      seen: false,
-      public: true
+      seen: false
+
     });
   };
 
@@ -65,30 +65,7 @@ class CardForm extends Component {
               </select>
             </div>
           </div>
-          <div className="form-check">
-            <label>
-              <input
-                onChange={this.handleInputChange}
-                type="checkbox"
-                name="public"
-                value={true}
-                defaultChecked={true}
-                className="form-check-input"
-              />
-              Public
-            </label>
-
-            <label>
-              <input
-                onChange={this.handleInputChange}
-                type="checkbox"
-                name="public"
-                value={false}
-                className="form-check-input"
-              />
-              Private
-            </label>
-          </div>
+         
 
           <button className="save-article-btn"type="submit">Save</button>
         </form>
