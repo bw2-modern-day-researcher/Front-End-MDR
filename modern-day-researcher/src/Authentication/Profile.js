@@ -134,7 +134,7 @@ export default class Profile extends Component {
           info,
           options
         )
-        .then(res => this.setState({ newPost: res.data }))
+        .then(res => this.getPost())
         .catch(err => console.log(err));
     }
   };

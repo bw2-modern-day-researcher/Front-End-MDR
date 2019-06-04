@@ -84,9 +84,15 @@ export default class Content extends Component {
 
   toggleCard = info => {
     const token = localStorage.getItem("jwt");
-    const changes = { title: info.title, category: info.category, link: info.link, seen: !info.seen, public: info.public };
+    const changes = {
+      title: info.title,
+      category: info.category,
+      link: info.link,
+      seen: !info.seen,
+      public: info.public
+    };
     const id = info.id;
-    console.log(info)
+    console.log(info);
     const options = {
       headers: {
         Authorization: token
@@ -132,13 +138,15 @@ export default class Content extends Component {
           info,
           options
         )
-        .then(res => this.setState({ newPost: res.data }))
+        .then(res => this.getPost())
         .catch(err => console.log(err));
     }
   };
 
   render() {
-    if(!localStorage.getItem('jwt')) {this.props.history.push('/login')}
+    if (!localStorage.getItem("jwt")) {
+      this.props.history.push("/login");
+    }
     return (
       <div className="content-container">
         <TabList
