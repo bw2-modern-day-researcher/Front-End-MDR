@@ -9,7 +9,8 @@ class CardForm extends Component {
       link: "",
       imgURL: "",
       username: localStorage.getItem("username"),
-      seen: false
+      seen: false,
+      public: true
      
     };
   }
