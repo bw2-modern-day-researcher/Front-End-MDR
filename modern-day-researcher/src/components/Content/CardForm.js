@@ -15,6 +15,7 @@ class CardForm extends Component {
   }
 
   addArticle = event => {
+    event.preventDefault();
     this.props.addNewArticle(this.state);
 
     this.setState({
